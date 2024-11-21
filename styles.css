@@ -1,0 +1,302 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Colors */
+:root {
+    --pastel-green: #ccf2d6; /* Pastel green */
+    --text-color: #333; /* Dark text for readability */
+    --overlay-text-color: #fff; /* White text for contrast on the video */
+    --button-bg: #007bff; /* Blue button background */
+    --button-text: #fff; /* White button text */
+    --white: #ffffff;
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--pastel-green);
+    color: var(--text-color);
+    z-index: 1000;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Full-Screen Video Section */
+/* Full-Screen Video Section */
+.full-video {
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.full-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the video span the full width */
+    height: 100%; /* Make the video span the full height */
+    object-fit: cover; /* Ensures the video fills the section without distortion */
+    z-index: -1; /* Places the video behind the content */
+}
+
+
+.full-video .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    color: var(--overlay-text-color);
+}
+
+.full-video .content h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.full-video .content p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.full-video .content a {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.full-video .content a:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Other Sections */
+.section {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--text-color);
+    text-align: center;
+    background: var(--white);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background: var(--pastel-green);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+ /* Section A - Centered Content */
+.experience {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full height of the viewport */
+    background: var(--white); /* Background color */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Content Wrapper */
+.experience .content {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 2rem; /* Add spacing between text and image */
+}
+
+/* Text Styling */
+.experience .text {
+    text-align: left;
+    max-width: 50%; /* Limit text width */
+}
+
+.experience .text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color); /* Ensure text is dark */
+}
+
+.experience .text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience .text ul li {
+    margin-bottom: 10px;
+}
+
+.experience .text ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.experience .text ul li a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Image Styling */
+.experience .image {
+    max-width: 50%; /* Limit image width */
+}
+
+.experience .image img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
+}
+
+
+
+
+/* Section B - Split Layout */
+.resources {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    overflow: hidden;
+}
+
+/* Left Side: Video */
+.resources .media {
+    flex: 1; /* Occupies 50% of the width */
+    height: 100%; /* Full height of the viewport */
+    overflow: hidden;
+}
+
+.resources .media video {
+    width: 100%; /* Fill container width */
+    height: 100%; /* Fill container height */
+    object-fit: cover; /* Ensure the video scales proportionally without distortion */
+}
+
+/* Right Side: Buttons */
+.resources .buttons {
+    flex: 1; /* Occupies 50% of the width */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    justify-content: center; /* Center-align buttons vertically */
+    align-items: center; /* Center-align buttons horizontally */
+    background-color: var(--white); /* Background color */
+}
+
+.resources .buttons .button {
+    display: inline-block;
+    text-decoration: none;
+    background: #007bff; /* Blue button background */
+    color: white; /* Button text color */
+    padding: 15px 30px; /* Button padding */
+    margin: 10px 0; /* Spacing between buttons */
+    font-size: 1.2rem; /* Font size */
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.resources .buttons .button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resources {
+        flex-direction: column; /* Stack video and buttons vertically */
+    }
+
+    .resources .media,
+    .resources .buttons {
+        width: 100%; /* Full width */
+        height: 50%; /* Each takes 50% height */
+    }
+
+    .resources .buttons {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+/* Section C - Full-Screen Image */
+.full-image {
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    background-color: var(--white); /* Background color (optional if image doesn't cover) */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Image Styling */
+.full-image a img {
+    width: 100%; /* Fill the width of the container */
+    height: 100%; /* Fill the height of the container */
+    object-fit: cover; /* Maintain aspect ratio while covering the screen */
+    transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.full-image a img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
